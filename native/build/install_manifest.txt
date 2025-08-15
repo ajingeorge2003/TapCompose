@@ -1,0 +1,2 @@
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/../windows/runner/libminiaudio_flutter.dll.a
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/../windows/runner/libminiaudio_flutter.dll

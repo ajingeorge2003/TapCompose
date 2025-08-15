@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'ui/auth_screen.dart';
 import 'ui/home_screen.dart';
 import 'ui/midi_arranger.dart';
+import 'ui/live_record_screen.dart'; // Import the new screen
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Name changed here
       title: 'TapCompose',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -35,6 +35,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => const HomeScreen(),
         '/arranger': (context) => const AdvancedMidiArrangerScreen(),
+        // Add the new route here
+        '/live-record': (context) => const LiveRecordScreen(),
       },
     );
   }

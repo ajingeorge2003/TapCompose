@@ -1,6 +1,6 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(tapcompose LANGUAGES CXX)
+project(tapcompose LANGUAGES CXX C)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
@@ -52,6 +52,26 @@ add_subdirectory(${FLUTTER_MANAGED_DIR})
 # Application build; see runner/CMakeLists.txt.
 add_subdirectory("runner")
 
+# Build the native miniaudio library
+set(MINIAUDIO_LIB_NAME "miniaudio_flutter")
+add_library(${MINIAUDIO_LIB_NAME} SHARED
+  "${CMAKE_CURRENT_SOURCE_DIR}/../native/miniaudio_flutter.c"
+)
+
+# Enable C language for this target
+set_target_properties(${MINIAUDIO_LIB_NAME} PROPERTIES LINKER_LANGUAGE C)
+
+# Set properties for the miniaudio library
+target_compile_definitions(${MINIAUDIO_LIB_NAME} PRIVATE MINIAUDIO_IMPLEMENTATION)
+target_link_libraries(${MINIAUDIO_LIB_NAME} ole32 winmm)
+
+# Set output directory to match where Flutter expects it
+set_target_properties(${MINIAUDIO_LIB_NAME} PROPERTIES 
+  RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/.."
+  RUNTIME_OUTPUT_DIRECTORY_DEBUG "${CMAKE_CURRENT_SOURCE_DIR}/.."
+  RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_CURRENT_SOURCE_DIR}/.."
+)
+
 
 # Generated plugin build rules, which manage building the plugins and adding
 # them to the application.
@@ -79,6 +99,10 @@ install(FILES "${FLUTTER_ICU_DATA_FILE}" DESTINATION "${INSTALL_BUNDLE_DATA_DIR}
   COMPONENT Runtime)
 
 install(FILES "${FLUTTER_LIBRARY}" DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
+  COMPONENT Runtime)
+
+# Install the miniaudio native library
+install(TARGETS ${MINIAUDIO_LIB_NAME} RUNTIME DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
   COMPONENT Runtime)
 
 if(PLUGIN_BUNDLED_LIBRARIES)

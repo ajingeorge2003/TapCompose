@@ -1,0 +1,7 @@
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/build/CMakeFiles/miniaudio_flutter.dir
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/build/CMakeFiles/edit_cache.dir
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/build/CMakeFiles/rebuild_cache.dir
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/build/CMakeFiles/list_install_components.dir
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/build/CMakeFiles/install.dir
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/build/CMakeFiles/install/local.dir
+D:/MCA/4 Trimester/spec_project_flutter/tapcompose/native/build/CMakeFiles/install/strip.dir

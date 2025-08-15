@@ -1,0 +1,7 @@
+# ninja log v6
+4	20909	7763822620119402	CMakeFiles/miniaudio_flutter.dir/miniaudio_flutter.c.obj	1db0760e1176ff30
+20913	21046	7763822830376503	libminiaudio_flutter.dll	403fbe8a615afa6e
+20913	21046	7763822830376503	libminiaudio_flutter.dll.a	403fbe8a615afa6e
+11	34172	7763829190134911	CMakeFiles/miniaudio_flutter.dir/miniaudio_flutter.c.obj	1db0760e1176ff30
+34173	34334	7763829533246526	libminiaudio_flutter.dll	873c63021992cadc
+34173	34334	7763829533246526	libminiaudio_flutter.dll.a	873c63021992cadc
